@@ -1,7 +1,7 @@
 function getAll(){
     const respon = axios.get("http://localhost:8080/mobil/rental")
-    const dr = respon.then(resp => resp.data)
-    return dr
+    const m = respon.then(resp => resp.data)
+    return m
 }
 
 async function create(data){
@@ -15,7 +15,7 @@ async function create(data){
 }
     
 async function update(data){
-    await axios.put("http://localhost:8080/mobil/rental", data)
+    await axios.put("http://localhost:8080/mobil/rental", mobil)
     .then((result) => {
         console.log(result)
         return result.data
@@ -25,7 +25,7 @@ async function update(data){
 }
 
 async function del(data){
-    await axios.delete("http://localhost:8080/mobil/rental", data)
+    await axios.delete("http://localhost:8080/mobil/rental", mobil)
     .then((result) => {
         console.log(result)
         return result.data
