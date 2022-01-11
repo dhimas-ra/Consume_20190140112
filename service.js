@@ -3,7 +3,15 @@ function getAll(){
     const m = respon.then(resp => resp.data)
     return m
 }
-
+function getbyID(data){
+    await axios.get("http://localhost:8080/mobil/rental/{idmobil}", data)
+    .then((result) => {
+        console.log(result)
+        return result.data
+    }).catch((err) => {
+        console.error(err)
+    });
+}
 async function create(data){
     await axios.post("http://localhost:8080/mobil/rental", data)
     .then((result) => {

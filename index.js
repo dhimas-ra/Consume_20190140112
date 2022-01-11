@@ -27,8 +27,7 @@ $("#dataTable").ready(function () {
             const td3 = tr.insertCell();
             const td4 = tr.insertCell();
             const td5 = tr.insertCell();
-            
-            const td6 = tr.insertCell();
+           
             console.log(response[i])
             td1.innerHTML = response[i]['id'];
             td2.innerHTML = response[i]['namaMobil'];
