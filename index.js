@@ -1,10 +1,11 @@
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    $("#name").text(profile.getName());
-    $("#email").text(profile.getEmail());
+    alert("You have been signed in successfully");
     $(".data").css("display", "block");
     $(".g-signin2").css("display", "none");
 }
+
+
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
@@ -14,13 +15,30 @@ function signOut() {
         $(".g-signin2").css("display", "block");
     });
 }
-
-function onLoad(){
-    gapi.load("auth2", function(){
-        gapi.auth2.init();
-
-    })
-}
-
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+$("#dataTable").ready(function () {
+    var tabel = document.getElementById("dataTable")
+    getAll().then(response => {
+        console.log(response)
+        for(var i = 0; i <response.length; i++){
+            const tr = tabel.insertRow()
+            const td1 = tr.insertCell();
+            const td2 = tr.insertCell();
+            const td3 = tr.insertCell();
+            const td4 = tr.insertCell();
+            
+            const td6 = tr.insertCell();
+            console.log(response[i])
+            td1.innerHTML = response[i].id;
+            td2.innerHTML = response[i].namaMobil;
+            td3.innerHTML = response[i].tipeMobil;
+            td4.innerHTML = response[i].platNomor;
+            td5.innerHTML = `<div class ="justify content-center">
+            <a class="btn btn-warning btn-sm text-white" border:none;" href="updateData.html?id=${response[i].id}">Edit</a>
+            <button type ="button" class="btn btn-danger btn-sm" onclick="del(${response[i].id});">Delete</button>
+            </div>`
+            }
+        }
+    )
+});
