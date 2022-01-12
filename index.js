@@ -51,3 +51,15 @@ $("#dataTable").ready(function () {
     )
 });
 
+function del(data) {
+    if (window.confirm("Apakah anda ingin menghapus data?") === true) {
+      axios.delete(`http://localhost:8080/mobil/rental/?id=${data}`).then((result) => {
+        alert("Hapus data berhasil!")
+        window.location.href = "/viewdata.html"
+      }).catch((err) => {
+        console.log(err)
+      });
+    }
+  }
+
+  

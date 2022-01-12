@@ -14,36 +14,27 @@
 <body>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Rental Mobil</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link active" aria-current="page" href="AddData.html">Tambah Mobil</a>
-        </div>
-      </div> -->
+      <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <input id="myInput" type="text" placeholder="Search..">
+      </div>
     </div>
   </nav>
   <section>
+    
     <div class="container mt-5">
-
       <h1 style="margin-top: 50px;">Rental Mobil</h1>
       <a class="btn btn-success btn-sm text-white" border:none; margin-bottom: 30px;" href="AddData.html">Add Data</a>
-      <div class="row">
+      
+      <!-- <div class="row">
         <div class="col-sm-12 col-md-6">
-          <div class="dataTables_length" id="tabelRental_length"><label>Show <select name="tabelRental_length"
-                aria-controls="tabelRental" class="form-select form-select-sm">
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-              </select> entries</label></div>
+          
         </div>
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
         
-      </div>
+      </div> -->
       <table id="dataTable" class="table table-striped">
         <thead>
           <tr>
@@ -55,26 +46,6 @@
           </tr>
         </thead>
       </table>
-      <!-- <div class="row">
-        <div class="col-sm-12 col-md-5">
-          <div class="dataTables_info" id="tabelMahasiswa_info" role="status" aria-live="polite">
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-7">
-          <div class="dataTables_paginate paging_simple_numbers" id="tabelMahasiswa_paginate">
-            <ul class="pagination">
-              <li class="paginate_button page-item previous disabled" id="tabelMahasiswa_previous"><a href="#"
-                  aria-controls="tabelMahasiswa" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-              <li class="paginate_button page-item active"><a href="#" aria-controls="tabelMahasiswa" data-dt-idx="1"
-                  tabindex="0" class="page-link">1</a></li>
-              <li class="paginate_button page-item "><a href="#" aria-controls="tabelMahasiswa" data-dt-idx="2"
-                  tabindex="0" class="page-link">2</a></li>
-              <li class="paginate_button page-item next" id="tabelMahasiswa_next"><a href="#"
-                  aria-controls="tabelMahasiswa" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li>
-            </ul>
-          </div>
-        </div>
-      </div> -->
     </div>
   </section>
 
@@ -101,7 +72,7 @@
     function del(data) {
       if (window.confirm("Apakah anda ingin menghapus data?") === true) {
         axios.delete(`http://localhost:8080/mobil/rental/?id=${data}`).then((result) => {
-          alert("Data Berhasil Dihapus")
+          alert("Hapus data berhasil!")
           window.location.href = "/viewdata.html"
         }).catch((err) => {
           console.log(err)
@@ -110,7 +81,20 @@
     }
     var url = "http://localhost:8080/mobil/rental";
   </script>
-
+    
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+  
+            
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Mas Dimdim</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </footer>
 </body>
 
 </html>

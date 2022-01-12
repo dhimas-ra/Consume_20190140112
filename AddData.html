@@ -75,7 +75,8 @@
             headers:{ "Content-Type": "application/json" }
         })
         .then((result) => {
-            console.log("Data Berhasil Disimpan")   
+            console.log("Data Berhasil Disimpan")
+            window.location.href="/viewdata.html"   
         }).catch((err) => {
             console.log(error)
         });

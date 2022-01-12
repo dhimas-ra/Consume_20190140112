@@ -28,12 +28,12 @@ async function update(data){
     });
 }
 
-async function del(data){
-    await axios.delete("http://localhost:8080/mobil/rental", data)
-    .then((result) => {
-        console.log(result)
-        return result.data
-    }).catch((err) => {
-        console.error(err)
-    });
-}
+// async function del(data){
+//     await axios.delete("http://localhost:8080/mobil/rental", data)
+//     .then((result) => {
+//         console.log(result)
+//         return result.data
+//     }).catch((err) => {
+//         console.error(err)
+//     });
+// }
