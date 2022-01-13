@@ -1,7 +1,7 @@
 function getAll(){
     const respon = axios.get("http://localhost:8080/mobil/rental")
-    const m = respon.then(resp => resp.data)
-    return m
+    const dr = respon.then(resp => resp.data)
+    return dr
 }
 function getbyID(idMobil){
     const respon = axios.get("http://localhost:8080/mobil/rental/{idmobil}")
@@ -28,12 +28,12 @@ async function update(data){
     });
 }
 
-// async function del(data){
-//     await axios.delete("http://localhost:8080/mobil/rental", data)
-//     .then((result) => {
-//         console.log(result)
-//         return result.data
-//     }).catch((err) => {
-//         console.error(err)
-//     });
-// }
+async function del(data){
+    await axios.delete("http://localhost:8080/mobil/rental", data)
+    .then((result) => {
+        console.log(result)
+        return result.data
+    }).catch((err) => {
+        console.error(err)
+    });
+}

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-signin-client_id"
-    content="1020199223290-um6kgv4afu9t39q1pml8jmc7igchcknc.apps.googleusercontent.com">
+    content="1020199223290-qtq4vhfl5fe4vdk21di695ccmmv3gvjh.apps.googleusercontent.com">
 
   <title>LOGIN</title>
 
@@ -23,9 +23,7 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
-              <h3 class="mb-5">Get Started</h3>
-              <p style="margin-bottom: 50px; color: #123e9c; font-family: Verdana, Geneva, Tahoma, sans-serif;">Don't
-                have account ? Sign up</p>
+              <h3 class="mb-5">Get Started with Google</h3>
               <div class="form-outline mb-4">
                 <label class="form-label" for="typeEmailX-2">Email</label>
                 <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
@@ -46,18 +44,17 @@
               <div class="data">
                 <br>
                 <hr> <br>
-                <p>Name :</p>
-                <p id="name"></p>
-                <p>Email:</p>
-                <p id="email"></p>
-                <div class="row justify-content-center">
-                  <div class="col-4">
-                    <a class="btn btn-outline-success view-button" href="viewdata.html"
-                      style="background-color: #d1d3e6; border:none; font-size: 15px;">View Data</a>
-                  </div>
-                  <div class="col-4">
-                    <button type="button" class="btn" onclick="signOut();"
-                      style="background-color: #d1d3e6; font-size: 15px;">Sign Out</button>
+                
+                <div class="data">
+                  <div class="row justify-content-center">
+                    <div class="col-4">
+                      <a class="btn btn-success view-button" href="viewdata.html"
+                        style="border:none; font-size: 15px;">View Data</a>
+                    </div>
+                    <div class="col-4">
+                      <button type="button" class="btn btn-danger" onclick="signOut();" style="font-size: 15px;">Sign
+                        Out</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -65,7 +62,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <script src="index.js"></script>

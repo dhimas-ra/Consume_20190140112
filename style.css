@@ -1,11 +1,14 @@
 .data {
     display: none;
 }
-
+.btn-block{
+  position: relative;
+}
 .g-signin2
 {
-    position: absolute;
+    position: relative;
     margin-top: 5px;
+    
 }
 
 .viewdata
@@ -26,6 +29,8 @@
     margin-right: calc(var(--bs-gutter-x)/ -2);
     margin-left: calc(var(--bs-gutter-x)/ -2);
 }
+
+
 
 #footer {
     background: #1f2627;

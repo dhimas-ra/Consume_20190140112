@@ -55,7 +55,27 @@
     </div>
     </div>
   </section>
+  <script>
+    function getData() {
+      var url = new URL($(location).attr("href"))
+      var params = url.searchParams.get("id")
+      console.log(params)
+      axios.get(
+        `http://localhost:8080/mobil/rental/${params}`
+      ).then((result) => {
+        console.log(result)
+        $("#id").val(result.data.id);
+        $("#namaMobil").val(result.data.namaMobil);
+        $("#tipeMobil").val(result.data.tipeMobil);
+        $("#platNomor").val(result.data.platNomor);
 
+      }).catch((err) => {
+        console.log(error)
+      });
+    }
+    var url = "http://localhost:8080/mobil/rental";
+    getData()
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="service.js"></script>
@@ -81,32 +101,15 @@
       })
         .then((result) => {
           console.log("Data Berhasil Diedit")
-          window.location.href="/viewdata.html"
+          window.location.href="viewdata.html"
         }).catch((err) => {
           console.log(error)
         });
     }
 
-    function getData() {
-      var url = new URL($(location).attr("href"))
-      var params = url.searchParams.get("id")
-      console.log(params)
-      axios.get(
-        `http://localhost:8080/mobil/rental${params}`
-      ).then((result) => {
-        console.log(result)
-        $("#id").val(result.data.id);
-        $("#namaMobil").val(result.data.namaMobil);
-        $("#tipeMobil").val(result.data.tipeMobil);
-        $("#platNomor").val(result.data.platNomor);
+    
 
-      }).catch((err) => {
-        console.log(error)
-      });
-    }
-
-    var url = "http://localhost:8080/mobil/rental";
-    getData()
+    
   </script>
 </body>
 
